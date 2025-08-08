@@ -1,3 +1,21 @@
+This file provides guidance to the AI agent when working with code in this repository.
+
+## Project Overview
+
+This is a company-specific fork of Open SWE - an asynchronous coding agent built with LangGraph that autonomously understands codebases, plans solutions, and executes code changes. The agent is specialized for completing full development cycles from PRD to deployment for company web applications.
+
+**Primary Mission**: Enable rapid prototyping and development of company web applications by autonomously completing development cycles from Product Requirements Documents (PRDs) to fully functional applications, saving hours of development time per application.
+
+The agent is optimized to work within these technology constraints and understands common patterns used across company applications.
+
+### Company Application Template
+
+All company web applications follow a standardized template:
+- **Backend**: Python (FastAPI/Django) with OpenAPI documentation
+- **Frontend**: Next.js 15 with App Router, TypeScript, and Tailwind CSS
+- **Database**: PostgreSQL with migrations
+- **Infrastructure**: AWS deployment (ECS/Lambda + RDS + S3)
+- **Architecture**: RESTful APIs with standardized patterns
 <general_rules>
 - Always use Yarn as the package manager - never use npm or other package managers
 - Run all general commands (e.g. not for starting a server) from the repository root using Turbo orchestration (yarn build, yarn lint, yarn format)
@@ -72,4 +90,5 @@ This is a Yarn workspace monorepo with Turbo build orchestration containing thre
 
 **Writing Tests**: Focus on testing core business logic, utilities, and agent functionality. Integration tests should verify end-to-end workflows. Use the existing test patterns and maintain consistency with the established testing structure.
 </testing_instructions>
+
 
