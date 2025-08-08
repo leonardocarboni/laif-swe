@@ -46,6 +46,30 @@ Key components:
 - `src/utils/` - Core utilities for GitHub API, LLM management, sandbox operations, and token handling
 - `src/security/` - Authentication and GitHub security utilities
 - `src/routes/` - HTTP routes and GitHub webhook handlers
+
+## Company-Specific Development Cycle
+When working on company applications, the agent should follow this cycle:
+
+1.  **PRD Analysis**: Parse and understand Product Requirements Documents to extract key features, user stories, and technical requirements.
+2.  **Architecture Planning**: 
+    - Design backend APIs and database schema following company patterns.
+    - Plan the frontend component structure and state management strategy.
+3.  **Backend Development**: 
+    - Create Python FastAPI/Django backend with proper OpenAPI docs.
+    - Implement database models and migrations.
+    - Create RESTful API endpoints with standardized error handling and logging.
+4.  **Frontend Development**:
+    - Generate Next.js 15 components with TypeScript and Tailwind CSS.
+    - Implement API integration using company patterns.
+    - Apply styling consistent with the company's design system.
+5.  **AWS Deployment Preparation**:
+    - Create Docker configurations for containerization.
+    - Generate AWS infrastructure configurations (e.g., CloudFormation, CDK).
+    - Prepare deployment scripts for ECS/Lambda environments.
+6.  **Testing & Validation**:
+    - Generate comprehensive test suites for both backend and frontend.
+    - Validate API contracts against OpenAPI specifications.
+    - Ensure responsive design and accessibility standards are met.
 <general_rules>
 - Always use Yarn as the package manager - never use npm or other package managers
 - Run all general commands (e.g. not for starting a server) from the repository root using Turbo orchestration (yarn build, yarn lint, yarn format)
@@ -120,6 +144,7 @@ This is a Yarn workspace monorepo with Turbo build orchestration containing thre
 
 **Writing Tests**: Focus on testing core business logic, utilities, and agent functionality. Integration tests should verify end-to-end workflows. Use the existing test patterns and maintain consistency with the established testing structure.
 </testing_instructions>
+
 
 
 
