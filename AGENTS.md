@@ -16,6 +16,14 @@ All company web applications follow a standardized template:
 - **Database**: PostgreSQL with migrations
 - **Infrastructure**: AWS deployment (ECS/Lambda + RDS + S3)
 - **Architecture**: RESTful APIs with standardized patterns
+
+## Agent Capabilities
+
+This agent is designed with two core principles: self-alteration and continuous improvement. It operates on a fork of its own codebase, allowing it to modify its internal workings to adapt to new requirements or improve its performance on the company's specific technology stack.
+
+- **Self-Altering**: The agent can read, understand, and modify its own source code. This allows it to complete tasks that may require changes to its own architecture or tools.
+- **Auto-Update Capability**: Although this is a specialized fork, it is designed to pull in updates from the upstream Open SWE project. This ensures the agent benefits from the latest advancements and bug fixes from the core open-source project while maintaining its company-specific adaptations.
+- **Custom Prompting**: To operate effectively within the private company's context, the agent requires a custom prompt. This prompt provides the necessary guidance on the company's development patterns, architectural standards, and specific project requirements.
 <general_rules>
 - Always use Yarn as the package manager - never use npm or other package managers
 - Run all general commands (e.g. not for starting a server) from the repository root using Turbo orchestration (yarn build, yarn lint, yarn format)
@@ -90,5 +98,6 @@ This is a Yarn workspace monorepo with Turbo build orchestration containing thre
 
 **Writing Tests**: Focus on testing core business logic, utilities, and agent functionality. Integration tests should verify end-to-end workflows. Use the existing test patterns and maintain consistency with the established testing structure.
 </testing_instructions>
+
 
 
