@@ -24,6 +24,28 @@ This agent is designed with two core principles: self-alteration and continuous 
 - **Self-Altering**: The agent can read, understand, and modify its own source code. This allows it to complete tasks that may require changes to its own architecture or tools.
 - **Auto-Update Capability**: Although this is a specialized fork, it is designed to pull in updates from the upstream Open SWE project. This ensures the agent benefits from the latest advancements and bug fixes from the core open-source project while maintaining its company-specific adaptations.
 - **Custom Prompting**: To operate effectively within the private company's context, the agent requires a custom prompt. This prompt provides the necessary guidance on the company's development patterns, architectural standards, and specific project requirements.
+
+## Architecture
+
+### Monorepo Structure
+This is a Yarn monorepo managed by Turbo with the following apps:
+- `apps/open-swe/` - Core LangGraph agent with state graphs for manager, planner, and programmer workflows
+- `apps/web/` - Next.js 15 frontend with shadcn/ui components and real-time thread management
+- `apps/cli/` - Command-line interface built with Ink and React
+- `apps/docs/` - Mintlify documentation site
+- `packages/shared/` - Shared TypeScript types and utilities across all apps
+
+### Core Agent Architecture (apps/open-swe)
+The agent is built using LangGraph with three main state graphs:
+- **Manager Graph** (`src/graphs/manager/`) - Handles GitHub issue initialization, message classification, and workflow routing
+- **Planner Graph** (`src/graphs/planner/`) - Generates execution plans, determines context needs, and manages planning iterations
+- **Programmer Graph** (`src/graphs/programmer/`) - Executes tasks, takes actions, handles errors, opens PRs, and includes reviewer subgraph
+
+Key components:
+- `src/tools/` - Various tools including shell execution, text editing, search, and GitHub integration
+- `src/utils/` - Core utilities for GitHub API, LLM management, sandbox operations, and token handling
+- `src/security/` - Authentication and GitHub security utilities
+- `src/routes/` - HTTP routes and GitHub webhook handlers
 <general_rules>
 - Always use Yarn as the package manager - never use npm or other package managers
 - Run all general commands (e.g. not for starting a server) from the repository root using Turbo orchestration (yarn build, yarn lint, yarn format)
@@ -98,6 +120,7 @@ This is a Yarn workspace monorepo with Turbo build orchestration containing thre
 
 **Writing Tests**: Focus on testing core business logic, utilities, and agent functionality. Integration tests should verify end-to-end workflows. Use the existing test patterns and maintain consistency with the established testing structure.
 </testing_instructions>
+
 
 
 
