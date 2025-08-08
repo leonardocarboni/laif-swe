@@ -1,9 +1,9 @@
 {
-  "name": "@open-swe/agent",
-  "homepage": "https://github.com/langchain-ai/open-swe/blob/main/README.md",
+  "name": "@laif-swe/agent",
+  "homepage": "https://github.com/langchain-ai/laif-swe/blob/main/README.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/langchain-ai/open-swe.git"
+    "url": "https://github.com/langchain-ai/laif-swe.git"
   },
   "private": true,
   "version": "0.0.0",
@@ -38,7 +38,7 @@
     "@octokit/core": "^7.0.2",
     "@octokit/rest": "^22.0.0",
     "@octokit/webhooks": "^14.0.2",
-    "@open-swe/shared": "*",
+    "@laif-swe/shared": "*",
     "diff": "^8.0.1",
     "hono": "^4.8.3",
     "jsonwebtoken": "^9.0.2",
@@ -74,9 +74,10 @@
     "vitest": "^3.2.3"
   },
   "packageManager": "yarn@3.5.1",
-  "description": "The core LangGraph agent application that powers Open SWE's autonomous code understanding, planning, and execution capabilities.",
+  "description": "The core LangGraph agent application that powers Laif-SWE's autonomous code understanding, planning, and execution capabilities.",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/langchain-ai/open-swe/issues"
+    "url": "https://github.com/langchain-ai/laif-swe/issues"
   }
 }
+
