@@ -93,3 +93,13 @@ When working on company applications, the agent should follow this cycle:
 - **Environment Variable Management**: Implement proper environment variable management using AWS Secrets Manager or Parameter Store.
 - **RDS Connection Pooling**: Use RDS for PostgreSQL with proper connection pooling to manage database connections efficiently.
 - **S3 and CloudFront**: Store static assets in S3 with a CloudFront distribution for fast, reliable delivery.
+
+## PRD Processing Guidelines
+
+When processing a Product Requirements Document:
+1.  **Extract Functional Requirements**: Map features to backend API endpoints and frontend components.
+2.  **Identify Data Models**: Define database tables, columns, and relationships.
+3.  **Plan User Interfaces**: Design user flows and UI layouts.
+4.  **Consider Scalability**: Plan for future growth in terms of users, data, and traffic.
+5.  **Identify Integration Points**: Determine where the application needs to connect with other company systems.
+6.  **Plan Testing Strategies**: Define unit, integration, and end-to-end testing plans.
